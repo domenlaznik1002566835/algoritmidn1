@@ -28,18 +28,19 @@ void radixsort(std::vector<unsigned char> &arr){
         countingSort(arr, place);
 }
 
-int main() {
-    std::ifstream file("vhod.txt");
-    std::vector<int> numbers;
-
-    if (!file) {
-        std::cerr << "Unable to open file";
+int main(int argc, char* argv[]) {
+    if(argc != 2){
+        std::cerr << "Usage: dn1 vhod.txt\n";
         return 1;
     }
 
-    std::copy(std::istream_iterator<int>(file),
-              std::istream_iterator<int>(),
-              std::back_inserter(numbers));
+    std::ifstream inputFile(argv[1]);
+    std::vector<unsigned char> numbers;
 
+    if (!inputFile) {
+        std::cerr << "Unable to open file";
+        return 1;
+    }
+    
     return 0;
 }
