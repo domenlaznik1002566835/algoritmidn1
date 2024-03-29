@@ -29,12 +29,14 @@ void radixsort(std::vector<unsigned char> &arr){
 }
 
 int main(int argc, char* argv[]) {
-    if(argc != 2){
-        std::cerr << "Usage: dn1 vhod.txt\n";
+    if(argc != 2) {
+        std::cerr << "Usage: dn1 <input file>";
         return 1;
     }
 
-    std::ifstream inputFile(argv[1]);
+    std::string filePath = argv[1];
+
+    std::ifstream inputFile(filePath);
     std::vector<unsigned char> numbers;
 
     if (!inputFile) {
@@ -47,11 +49,11 @@ int main(int argc, char* argv[]) {
         numbers.push_back(number);
 
     radixsort(numbers);
- //izhod
+
     std::ofstream outputFile("izhod.txt");
     for(const auto& n : numbers){
         outputFile << static_cast<int>(n) << ' ';
     }
-    
+
     return 0;
 }
