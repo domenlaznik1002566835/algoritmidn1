@@ -47,7 +47,7 @@ int main(int argc, char* argv[]) {
         numbers.push_back(number);
 
     radixsort(numbers);
-
+ //izhod
     std::ofstream outputFile("izhod.txt");
     for(const auto& n : numbers){
         outputFile << static_cast<int>(n) << ' ';
