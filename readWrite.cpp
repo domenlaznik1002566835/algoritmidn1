@@ -18,7 +18,7 @@ void readAndDisplayFile(const std::string& filePath) {
     displayFileContents(file);
 }
 
-int main() {
+int a() {
     readAndDisplayFile("vhod.txt");
     readAndDisplayFile("izhod.txt");
 
