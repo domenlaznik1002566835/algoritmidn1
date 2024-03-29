@@ -41,6 +41,17 @@ int main(int argc, char* argv[]) {
         std::cerr << "Unable to open file";
         return 1;
     }
+
+    unsigned char number;
+    while(inputFile >> number)
+        numbers.push_back(number);
+
+    radixsort(numbers);
+
+    std::ofstream outputFile("izhod.txt");
+    for(const auto& n : numbers){
+        outputFile << static_cast<int>(n) << ' ';
+    }
     
     return 0;
 }
