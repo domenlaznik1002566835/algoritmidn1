@@ -3,6 +3,12 @@
 #include <vector>
 #include <iterator>
 
+void countingSort(std::vector<unsigned char>& arr, int place){
+    const int maxVal = 256;
+    std::vector<int> count(maxVal, 0);
+    std::vector<unsigned char> output(arr.size());
+}
+
 int main() {
     std::ifstream file("vhod.txt");
     std::vector<int> numbers;
