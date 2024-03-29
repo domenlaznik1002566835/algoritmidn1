@@ -7,6 +7,12 @@ void countingSort(std::vector<unsigned char>& arr, int place){
     const int maxVal = 256;
     std::vector<int> count(maxVal, 0);
     std::vector<unsigned char> output(arr.size());
+
+    for (unsigned char i : arr)
+        count[(i >> place) & 1]++;
+
+    for(int i = 1; i < maxVal; i++)
+        count[i] += count[i - 1];
 }
 
 int main() {
