@@ -23,6 +23,11 @@ void countingSort(std::vector<unsigned char>& arr, int place){
         arr[i] = output[i];
 }
 
+void radixsort(std::vector<unsigned char> &arr){
+    for(int place = 0; place < 8; place++)
+        countingSort(arr, place);
+}
+
 int main() {
     std::ifstream file("vhod.txt");
     std::vector<int> numbers;
