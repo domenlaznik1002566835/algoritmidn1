@@ -13,6 +13,14 @@ void countingSort(std::vector<unsigned char>& arr, int place){
 
     for(int i = 1; i < maxVal; i++)
         count[i] += count[i - 1];
+
+    for(int i = arr.size() - 1; i >= 0; i--){
+        output[count[(arr[i] >> place) & 1] - 1] = arr[i];
+        count[(arr[i] >> place) & 1]--;
+    }
+
+    for(int i = 0; i < arr.size(); i++)
+        arr[i] = output[i];
 }
 
 int main() {
